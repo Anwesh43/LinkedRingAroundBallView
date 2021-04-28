@@ -219,4 +219,13 @@ class RingAroundBallView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : RingAroundBallView {
+            val view : RingAroundBallView = RingAroundBallView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
