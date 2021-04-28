@@ -10,21 +10,21 @@ import android.graphics.RectF
 import android.content.Context
 
 val colors : Array<Int> = arrayOf(
-    "",
-    "",
-    "",
-    "",
-    ""
+    "#f44336",
+    "#9C27B0",
+    "#BF360C",
+    "#00C853",
+    "#1A237E"
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
 val parts : Int = 4
-val scGap : Float = 0.02f / parts
+val scGap : Float = 0.04f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 4.9f
 val concFactor : Float = 3.9f
 val deg : Float = 360f
-val delay : Long = 20
+val delay : Long = 15
 val backColor : Int = Color.parseColor("#BDBDBD")
 
 
