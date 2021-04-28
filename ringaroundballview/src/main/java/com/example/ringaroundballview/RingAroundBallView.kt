@@ -194,4 +194,27 @@ class RingAroundBallView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : RingAroundBallView) {
+
+        private val rab : RingAroundBall = RingAroundBall(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            rab.draw(canvas, paint)
+            animator.animate {
+                rab.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            rab.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
